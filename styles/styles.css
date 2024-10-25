@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -49,6 +50,14 @@ body {
   margin: 0;
 }
 
+.edu-container {
+  padding: 1.25rem;
+  background-color: #f9f9f9;
+  border-radius: .5rem;
+  min-height: 84vh;
+  height: 100%;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -61,6 +70,10 @@ h5.subtitulo {
   color: #21505D;
   font-weight: 700;
   font-size: 18px;
+}
+
+.nav {
+  justify-content: center;
 }
 
 .nav-link.active {
@@ -102,6 +115,7 @@ img {
 
 .edu-nav-bar .nav-bar {
   display: flex;
+  max-height: 3.5rem;
   justify-content: space-between;
   padding: .75rem 1.25rem;
 }

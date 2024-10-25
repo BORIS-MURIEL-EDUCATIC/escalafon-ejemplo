@@ -1,149 +1,148 @@
 <p>Productos que dan cuenta de ideas, métodos o herramientas que pueden impactar el desarrollo económico y generar
-    innovación.</p>
+  innovación.</p>
 
 <!-- Dropdown for Categories -->
 <div class="mb-4">
-    <label for="categoria-inn" class="form-label" style="color: #2c4b52; padding: 5px;"><strong>Seleccione un tipo de
-            producto:</strong></label>
-    <select class="form-select" id="categoria-inn">
-        <option value="spinOff">Spin off que se fundamenta en tecnología desarrollada con la participación como
-            investigador</option>
-        <option value="productosEmpresariales">Productos empresariales</option>
-        <option value="asesoriasConsultorias">Asesorías y Consultorías técnico-científicas</option>
-        <option value="softwareFuncional">Software funcional registrado a partir de un proyecto de investigación
-        </option>
-        <option value="prototipoIndustrial">Prototipo industrial</option>
-        <option value="regulacionesNormas">Regulaciones, normas, reglamentos y legislaciones</option>
-    </select>
+  <label for="categoria-inn" class="form-label" style="color: #2c4b52; padding: 5px;"><strong>Seleccione un tipo de
+      producto:</strong></label>
+  <select class="form-select" id="categoria-inn">
+    <option value="spinOff">Spin off que se fundamenta en tecnología desarrollada con la participación como
+      investigador</option>
+    <option value="productosEmpresariales">Productos empresariales</option>
+    <option value="asesoriasConsultorias">Asesorías y Consultorías técnico-científicas</option>
+    <option value="softwareFuncional">Software funcional registrado a partir de un proyecto de investigación
+    </option>
+    <option value="prototipoIndustrial">Prototipo industrial</option>
+    <option value="regulacionesNormas">Regulaciones, normas, reglamentos y legislaciones</option>
+  </select>
 </div>
 
 <!-- Display Selected Category Information -->
-<div id="categoriaInfo" class="mb-4" style="background-color: #2c4b52; color: white; padding: 5px;"><strong>Fuente
-        de Verificación:</strong> <span id="descripcionCategoria"></span>
-    <!-- Content will be updated based on selection -->
+<div class="categoriaInfo mb-4 p-3" style="border-radius: 8px; background-color: #2c4b52; color: white; padding: 5px;">
+  <strong>Fuente de Verificación:</strong>
+  <span class="descripcionCategoria"></span>
 </div>
 
 <!-- Form to Add Product Information -->
 <div class="mb-5">
-    <h5>Ingresar Información del Producto:</h5>
-    <div class="row" id="formularioProducto">
-        <div class="col-md-6 mb-3">
-            <label for="tituloProducto" class="form-label">Título producto:</label>
-            <input type="text" class="form-control" id="tituloProducto"
-                placeholder="Ingrese el título del producto de innovación">
-        </div>
-        <div class="col-md-6 mb-3">
-            <label for="descripcionUrl" class="form-label">Descripción, URL a soporte</label>
-            <input type="text" class="form-control" id="descripcionUrl"
-                placeholder="Ingrese la descripción y URL de soporte del producto">
-        </div>
-        <div class="w-100"></div>
-
-        <div class="col-md-2 mb-3">
-            <label for="#autores" class="form-label"># Autores:</label>
-            <input type="number" class="form-control" id="#autores" min="1" max="99" placeholder="# de autores"
-                oninput="if (this.value > 99) this.value = 99;">
-        </div>
-        <div class="col-md-2 mb-3">
-            <label for="anioSemestre" class="form-label">Año-Semestre:</label>
-            <select class="form-select" id="anioSemestre">
-                <option value="2024-2">2024-2</option>
-                <option value="2024-1">2024-1</option>
-                <option value="2023-2">2023-2</option>
-                <option value="2023-1">2023-1</option>
-                <option value="2022-2">2022-2</option>
-                <option value="2022-1">2022-1</option>
-                <option value="2021-2">2021-2</option>
-                <option value="2021-1">2021-1</option>
-                <option value="2020-2">2020-2</option>
-                <option value="2020-1">2020-1</option>
-            </select>
-        </div>
-
-        <div class="col-md-4 mb-3"> <label for="evidencias" class="form-label">Evidencias:</label>
-            <input type="file" class="form-control" id="evidencias" placeholder="Adjunte las evidencias">
-        </div>
-        <div class="col-md-3 mb-3" id="campoRegistro" style="display: none;">
-            <label for="#registro" class="form-label"># Registro:</label>
-            <input type="text" class="form-control" id="#registro" maxlength="10"
-                placeholder="Ingrese el # de registro del producto">
-        </div>
-        <div class="col-md-3 mb-3" id="campoIdNorma" style="display: none;">
-            <label for="#idNorma" class="form-label">Id. Norma:</label>
-            <input type="text" class="form-control" id="#idNorma" maxlength="5"
-                placeholder="Ingrese el Id. de la norma">
-        </div>
-
-
-        <div class="col-12 text-end">
-            <button type="button" class="btn" style="background-color: #2c4b52; color: white;">Adicionar</button>
-        </div>
+  <h5>Ingresar Información del Producto:</h5>
+  <div class="row" id="formularioProducto">
+    <div class="col-md-6 mb-3">
+      <label for="tituloProducto" class="form-label">Título producto:</label>
+      <input type="text" class="form-control" id="tituloProducto"
+        placeholder="Ingrese el título del producto de innovación">
     </div>
+    <div class="col-md-6 mb-3">
+      <label for="descripcionUrl" class="form-label">Descripción, URL a soporte</label>
+      <input type="text" class="form-control" id="descripcionUrl"
+        placeholder="Ingrese la descripción y URL de soporte del producto">
+    </div>
+    <div class="w-100"></div>
+
+    <div class="col-md-2 mb-3">
+      <label for="#autores" class="form-label"># Autores:</label>
+      <input type="number" class="form-control" id="#autores" min="1" max="99" placeholder="# de autores"
+        oninput="if (this.value > 99) this.value = 99;">
+    </div>
+    <div class="col-md-2 mb-3">
+      <label for="anioSemestre" class="form-label">Año-Semestre:</label>
+      <select class="form-select" id="anioSemestre">
+        <option value="2024-2">2024-2</option>
+        <option value="2024-1">2024-1</option>
+        <option value="2023-2">2023-2</option>
+        <option value="2023-1">2023-1</option>
+        <option value="2022-2">2022-2</option>
+        <option value="2022-1">2022-1</option>
+        <option value="2021-2">2021-2</option>
+        <option value="2021-1">2021-1</option>
+        <option value="2020-2">2020-2</option>
+        <option value="2020-1">2020-1</option>
+      </select>
+    </div>
+
+    <div class="col-md-4 mb-3"> <label for="evidencias" class="form-label">Evidencias:</label>
+      <input type="file" class="form-control" id="evidencias" placeholder="Adjunte las evidencias">
+    </div>
+    <div class="col-md-3 mb-3" id="campoRegistro" style="display: none;">
+      <label for="#registro" class="form-label"># Registro:</label>
+      <input type="text" class="form-control" id="#registro" maxlength="10"
+        placeholder="Ingrese el # de registro del producto">
+    </div>
+    <div class="col-md-3 mb-3" id="campoIdNorma" style="display: none;">
+      <label for="#idNorma" class="form-label">Id. Norma:</label>
+      <input type="text" class="form-control" id="#idNorma" maxlength="5" placeholder="Ingrese el Id. de la norma">
+    </div>
+
+
+    <div class="col-12 text-end">
+      <button type="button" class="btn" style="background-color: #2c4b52; color: white;">Adicionar</button>
+    </div>
+  </div>
 </div>
 
 <!-- Table for Added Products -->
 <div style="width: 100%; overflow-x: scroll;">
-    <table class="table table-bordered">
-        <thead class="table-light">
-            <tr>
-                <th>Categoría</th>
-                <th>Título producto</th>
-                <th>Descripción</th>
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>Categoría</th>
+        <th>Título producto</th>
+        <th>Descripción</th>
 
-                <th># autores</th>
-                <th>Año-Semestre</th>
-                <th>Evidencias</th>
+        <th># autores</th>
+        <th>Año-Semestre</th>
+        <th>Evidencias</th>
 
-                <th># Registro / Norma</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Spin off</td>
-                <td>Innovación en Energía</td>
-                <td>Proyecto para desarrollar energías renovables.</td>
-                <td>3</td>
-                <td>2022-1</td>
-                <td><i class="bi bi-download" role="button"></i> Documento.pdf</td>
+        <th># Registro / Norma</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Spin off</td>
+        <td>Innovación en Energía</td>
+        <td>Proyecto para desarrollar energías renovables.</td>
+        <td>3</td>
+        <td>2022-1</td>
+        <td><i class="bi bi-download" role="button"></i> Documento.pdf</td>
 
-                <td></td>
-                <td class="text-center">
-                    <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
-                    <i class="bi bi-trash text-danger" role="button"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>Productos empresariales</td>
-                <td>Gestor Empresarial</td>
+        <td></td>
+        <td class="text-center">
+          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
+          <i class="bi bi-trash text-danger" role="button"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>Productos empresariales</td>
+        <td>Gestor Empresarial</td>
 
-                <td>Software de gestión para PYMEs.</td>
-                <td>5</td>
-                <td>2021-2</td>
+        <td>Software de gestión para PYMEs.</td>
+        <td>5</td>
+        <td>2021-2</td>
 
-                <td><i class="bi bi-download" role="button"></i>Gestor.zip</td>
+        <td><i class="bi bi-download" role="button"></i>Gestor.zip</td>
 
-                <td></td>
-                <td class="text-center">
-                    <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
-                    <i class="bi bi-trash text-danger" role="button"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>Software funcional</td>
-                <td>Plataforma de Aprendizaje</td>
-                <td>Aplicación para mejorar la educación en línea.</td>
-                <td>4</td>
-                <td>2023-1</td>
+        <td></td>
+        <td class="text-center">
+          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
+          <i class="bi bi-trash text-danger" role="button"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>Software funcional</td>
+        <td>Plataforma de Aprendizaje</td>
+        <td>Aplicación para mejorar la educación en línea.</td>
+        <td>4</td>
+        <td>2023-1</td>
 
-                <td><i class="bi bi-download" role="button"></i>Plataforma.apk</td>
+        <td><i class="bi bi-download" role="button"></i>Plataforma.apk</td>
 
-                <td></td>
-                <td class="text-center">
-                    <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
-                    <i class="bi bi-trash text-danger" role="button"></i>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        <td></td>
+        <td class="text-center">
+          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
+          <i class="bi bi-trash text-danger" role="button"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

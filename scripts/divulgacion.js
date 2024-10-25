@@ -1,19 +1,52 @@
 document.getElementById('divulgacion-tab').addEventListener('click', function () {
   const contentContainer = document.getElementById('divulgacionContent');
+  $('#current-page').text("Divulgación");
+  contentContainer.innerHTML = "";
 
-  if (contentContainer.innerHTML === '') {
-    fetch('pages/divulgacion.html')
-      .then(response => response.text())
-      .then(data => {
-        contentContainer.innerHTML = "";
-        contentContainer.innerHTML = data;
-        setupCategoriaDivulgacionChangeHandler();
-      })
-      .catch(error => console.error('Error cargando divulgacion.html:', error));
-  }
+  fetch('pages/divulgacion.html')
+    .then(response => response.text())
+    .then(data => {
+      contentContainer.innerHTML = data;
+      const defaultValue = $('#categoria-divu').val();
+      setValuesDiv(defaultValue);
+      setupCategoriaDivulgacionChangeHandler();
+    })
+    .catch(error => console.error('Error cargando divulgacion.html:', error));
 });
 
 function setupCategoriaDivulgacionChangeHandler() {
+  $('#categoria-divu').change(function () {
+    const selectedValue = $(this).val();
+    setValuesDiv(selectedValue);
+  });
+
+  $('#publicado-eia1').change(function () {
+    const selectedValue = $(this).prop('checked');
+    if (selectedValue) $('#div-entrega').show();
+  });
+
+  $('#publicado-eia2').change(function () {
+    const selectedValue = $(this).prop('checked');
+    if (selectedValue) $('#div-entrega').hide();
+  });
+}
+
+function setOtherFieldsDiv(selectedFieldIds) {
+  const allFieldIds = [
+    "div-articulo",
+    "div-asignado",
+    "div-descripcionUrl",
+    "div-descripcion",
+    "div-tipo-libro",
+    "div-publicado-eia",
+    "div-entrega"
+  ];
+
+  allFieldIds.forEach(fieldId => $('#' + fieldId).hide());
+  selectedFieldIds.forEach(fieldId => $('#' + fieldId).show());
+}
+
+function setValuesDiv(value) {
   const categoriaInfo = {
     "libro_texto": {
       description: "Son las publicaciones que demuestran, además de servir como guías, conceptualización teórica robusta, reflexiones en el campo de la ciencia tratada, metodologías y conclusiones. Incluye libros informativos que cuentan con soporte teórico verificable y sirven para difundir conocimiento técnico, científico académico, histórico o cultural.",
@@ -61,38 +94,8 @@ function setupCategoriaDivulgacionChangeHandler() {
     }
   };
 
-  const defaultValue = $('#categoria-divu').val();
-  $('#descripcionCategoria').text(categoriaInfo[defaultValue].description);
-  setOtherFieldsDiv(categoriaInfo[defaultValue].fieldIds);
-
-  $('#categoria-divu').change(function () {
-    const selectedValue = $(this).val();
-    $('#descripcionCategoria').text(categoriaInfo[selectedValue].description);
-    setOtherFieldsDiv(categoriaInfo[selectedValue].fieldIds);
-  });
-
-  $('#publicado-eia1').change(function () {
-    const selectedValue = $(this).prop('checked');
-    if (selectedValue) $('#div-entrega').show();
-  });
-
-  $('#publicado-eia2').change(function () {
-    const selectedValue = $(this).prop('checked');
-    if (selectedValue) $('#div-entrega').hide();
-  });
-}
-
-function setOtherFieldsDiv(selectedFieldIds) {
-  const allFieldIds = [
-    "div-articulo",
-    "div-asignado",
-    "div-descripcionUrl",
-    "div-descripcion",
-    "div-tipo-libro",
-    "div-publicado-eia",
-    "div-entrega"
-  ];
-
-  allFieldIds.forEach(fieldId => $('#' + fieldId).hide());
-  selectedFieldIds.forEach(fieldId => $('#' + fieldId).show());
+  if (categoriaInfo[value]) {
+    hidecategoryInfo(categoriaInfo[value].description);
+    setOtherFieldsDiv(categoriaInfo[value].fieldIds);
+  }
 }

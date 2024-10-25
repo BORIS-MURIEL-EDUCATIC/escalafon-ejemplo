@@ -1,19 +1,41 @@
 document.getElementById('nuevo-conocimiento-tab').addEventListener('click', function () {
   const contentContainer = document.getElementById('nuevoConocimientoContent');
+  $('#current-page').text("Nuevo conocimiento");
+  contentContainer.innerHTML = "";
 
-  if (contentContainer.innerHTML === '') {
-    fetch('pages/nuevoConocimiento.html')
-      .then(response => response.text())
-      .then(data => {
-        contentContainer.innerHTML = "";
-        contentContainer.innerHTML = data;
-        setupCategoriaChangeHandler();
-      })
-      .catch(error => console.error('Error cargando nuevoConocimiento.html:', error));
-  }
+  fetch('pages/nuevoConocimiento.html')
+    .then(response => response.text())
+    .then(data => {
+      contentContainer.innerHTML = data;
+      const defaultValue = $('#categoria-nuevo').val();
+      setValues(defaultValue);
+      setupCategoriaChangeHandler();
+    })
+    .catch(error => console.error('Error cargando nuevoConocimiento.html:', error));
 });
 
 function setupCategoriaChangeHandler() {
+  $('#categoria-nuevo').change(function () {
+    const selectedValue = $(this).val();
+    setValues(selectedValue);
+  });
+}
+
+function setOtherFields(selectedFieldIds) {
+  const allFieldIds = [
+    "div-radicado",
+    "div-certificado",
+    "div-articulo",
+    "div-contratoPat",
+    "div-contrato",
+    "div-tipo-libro"
+  ];
+
+  allFieldIds.forEach(fieldId => $('#' + fieldId).hide());
+  selectedFieldIds.forEach(fieldId => $('#' + fieldId).show());
+}
+
+function setValues(value) {
   const categoriaInfo = {
     "patente": {
       description: "Indicar la etapa del proceso en la que se encuentra (a partir de sometida a evaluación en oficina de patentes). Indicar también si el por vía tradicional o vía PCT.",
@@ -57,28 +79,8 @@ function setupCategoriaChangeHandler() {
     }
   };
 
-  const defaultValue = $('#categoria-nuevo').val();
-
-  $('#descripcionCategoria').text(categoriaInfo[defaultValue].description);
-  setOtherFields(categoriaInfo[defaultValue].fieldIds);
-
-  $('#categoria-nuevo').change(function () {    
-    const selectedValue = $(this).val();
-    $('#descripcionCategoria').text(categoriaInfo[selectedValue].description);
-    setOtherFields(categoriaInfo[selectedValue].fieldIds);
-  });
-}
-
-function setOtherFields(selectedFieldIds) {
-  const allFieldIds = [
-    "div-radicado",
-    "div-certificado",
-    "div-articulo",
-    "div-contratoPat",
-    "div-contrato",
-    "div-tipo-libro"
-  ];
-
-  allFieldIds.forEach(fieldId => $('#' + fieldId).hide());
-  selectedFieldIds.forEach(fieldId => $('#' + fieldId).show());
+  if (categoriaInfo[value]) {
+    hidecategoryInfo(categoriaInfo[value].description);
+    setOtherFieldsDiv(categoriaInfo[value].fieldIds);
+  }
 }
