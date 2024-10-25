@@ -1,0 +1,145 @@
+<p>Productos resultado de actividades de investigación y desarrollo experimental. Constituyen aportes al estado de la
+  técnica en un área de conocimiento específica.</p>
+
+<div class="mb-4">
+  <label for="categoria-nuevo" class="form-label" style="color: #2c4b52; padding: 5px;"><strong>Seleccione un tipo de
+      producto:</strong></label>
+  <select class="form-select" id="categoria-nuevo">
+    <option value="patente">Patente</option>
+    <option value="libro_investigacion">Libro de investigación</option>
+    <option value="capitulo_libro">Capítulo de libro</option>
+    <option value="articulo_q1">Artículo en revista categoría Q1</option>
+    <option value="modelo_utilidad">Modelo de utilidad</option>
+    <option value="articulo_q2">Artículo en revista categoría Q2</option>
+    <option value="certificado_variedades">Certificado de obtención de variedades vegetales o animales</option>
+    <option value="articulo_q3">Artículo en revista categoría Q3</option>
+    <option value="articulo_q4">Artículo en revista categoría Q4</option>
+    <option value="articulo_indexadas_inferiores">Artículo en revistas científicas indexadas en categorías
+      inferiores</option>
+  </select>
+</div>
+
+<div id="categoriaInfo" class="mb-4" style="background-color: #2c4b52; color: white; padding: 5px;">
+  <strong>Fuente de Verificación:</strong> <span id="descripcionCategoria"></span>
+</div>
+
+<!-- Form for filling the products -->
+<div class="mb-5">
+  <h5>Ingresar Información del Producto:</h5>
+  <div class="row" id="formularioProducto">
+    <div class="col-md-6 mb-3">
+      <label for="tituloProducto" class="form-label">Título del producto:</label>
+      <input type="text" class="form-control" id="tituloProducto" placeholder="Ingrese el título del producto.">
+    </div>
+
+    <div class="col-md-6 mb-3" id="div-radicado">
+      <label for="radicado" class="form-label">Número de radicado:</label>
+      <input type="text" class="form-control" id="radicado" placeholder="Ingrese el número de radicado.">
+    </div>
+
+    <div class="col-md-6 mb-3" id="div-certificado">
+      <label for="certificado" class="form-label">Número de certificado:</label>
+      <input type="text" class="form-control" id="certificado" placeholder="Ingrese el número de certificado.">
+    </div>
+
+    <div class="col-md-6 mb-3" id="div-articulo">
+      <label for="articulo" class="form-label">ISSN/ISBN:</label>
+      <input type="text" class="form-control" id="articulo" placeholder="Ingrese el ISSN/ISBN.">
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="descripcionUrl" class="form-label">Descripción medio de publicación, url a sporte para
+        verificación</label>
+      <input type="text" class="form-control" id="descripcionUrl"
+        placeholder="Ingrese la descripción/URL de soporte del producto">
+    </div>
+
+    <div class="col-md-6 mb-3"> <label for="evidencias" class="form-label">Evidencias:</label>
+      <input type="file" class="form-control" id="evidencias" placeholder="Adjunte las evidencias">
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <label for="autores" class="form-label">Número de Autores:</label>
+      <input type="number" class="form-control" id="autores" min="1" max="99" placeholder="Número de autores"
+        oninput="if (this.value > 99) this.value = 99;">
+    </div>
+
+
+    <div class="col-md-3 mb-3">
+      <label for="anioSemestre" class="form-label">Año y Semestre:</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="anio" placeholder="Año" maxlength="4"
+          oninput="if (this.value > 2024) this.value = 2024;">
+        <div class="input-group-prepend">
+          <span class="input-group-text">-</span>
+        </div>
+        <input type="number" class="form-control" id="semestre" placeholder="Semestre" maxlength="1"
+          oninput="if (this.value > 2) this.value = 2;">
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3" id="div-contratoPat">
+      <label for="contratoPat" class="form-label">Estado del contrato:</label>
+      <select class="form-select" id="contratoPat">
+        <option value="fullContract">Otorgada con contrato</option>
+        <option value="testContract">Examen favorable con contrato</option>
+        <option value="WithoutContract">Otorgado sin contrato</option>
+        <option value="onlyTest">Examen favorable sin contrato</option>
+      </select>
+    </div>
+
+    <div class="col-md-6 mb-3" id="div-contrato">
+      <label for="contrato" class="form-label">Estado del contrato:</label>
+      <select class="form-select" id="contrato">
+        <option value="withContract">Con contrato</option>
+        <option value="withoutContract">Sin contrato</option>
+      </select>
+    </div>
+
+    <div class="col-md-3 mb-3" id="div-tipo-libro">
+      <label for="tipo-libro" class="form-label">Tipo de libro:</label>
+      <select class="form-select" id="tipo-libro">
+        <option value="typeB">Libro tipo A</option>
+        <option value="typeA">Libro tipo B</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 text-end">
+      <button type="button" class="btn" style="background-color: #2c4b52; color: white;">Adicionar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Table for Added Products -->
+<div style="width: 100%; overflow-x: scroll;">
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>Tipo de Producto</th>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Radicacion</th>
+        <th># autores</th>
+        <th>Año y Semestre</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Patente</td>
+        <td>Conexión de estructuras prefabricadas</td>
+        <td>Patente invención otorgada por Resolucion 36351 Industria y Comercio 08 jul. 2020</td>
+        <td>NC2017/0007927</td>
+        <td>4</td>
+        <td>2020-2</td>
+
+        <td class="d-flex flex-row">
+          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
+          <i class="bi bi-trash text-danger" role="button"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

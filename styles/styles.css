@@ -1,0 +1,139 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-breadcrumbs {
+  width: 100%;
+  display: flex;
+  margin: .625rem 0;
+}
+
+.edu-breadcrumbs ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0 .875rem;
+}
+
+.edu-breadcrumbs ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  flex-wrap: nowrap;
+}
+
+.edu-breadcrumbs ul li a {
+  color: #2c4b52;
+  text-decoration: none;
+  font-size: .875rem;
+}
+
+.edu-breadcrumbs ul li .separator {
+  color: #adadad;
+  margin: .125rem .625rem 0;
+  font-size: .5rem;
+}
+
+.edu-breadcrumbs ul li p {
+  color: #adadad;
+  font-size: .875rem;
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+  padding: 1.25rem;
+}
+
+h5.subtitulo {
+  color: #21505D;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-link.active {
+  background-color: #2c4b52 !important;
+  color: white !important;
+}
+
+.nav-link {
+  border-color: #2c4b52 !important;
+  color: #2c4b52 !important;
+}
+
+.edu-nav-bar {
+  background-color: color-mix(in srgb, #21505D, transparent 60%);
+}
+
+button {
+  outline: unset;
+  background: unset;
+  border: unset;
+  padding: unset;
+  text-align: unset;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.btn-icon {
+  padding: 0 .625rem;
+  font-size: 1.25rem;
+}
+
+.edu-nav-bar .nav-bar img {
+  height: 2rem;
+  padding: 0 .625rem;
+}
+
+.edu-nav-bar .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: .75rem 1.25rem;
+}
+
+.input-icon {
+  position: relative;
+  margin: 0 .5rem !important;
+}
+
+.input-icon input {
+  font-family: inter-standar, sans-serif;
+  color: #6c757d;
+  padding-left: 30px;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.edu-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: color-mix(in srgb, #21505D, transparent 60%);
+  padding: 1rem 2rem;
+  margin-top: auto;
+}
+
+.edu-footer img {
+  height: 2rem;
+}

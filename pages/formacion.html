@@ -1,0 +1,93 @@
+<p>Incluye en esta sección toda la información referente a tu formación.</p>
+
+<div class="mb-4">
+    <label for="categoria-form" class="form-label" style="color: #2c4b52; padding: 5px;"><strong>Seleccione un tipo de
+        producto:</strong></label>
+    <select class="form-select" id="categoria-form">
+        <option value="administracion">Administración académica</option>
+        <option value="encargo_administrativo_empresarial">Encargo administrativo empresarial</option>
+        <option value="direccion_tesis_doctorado">Dirección de tesis de doctorado</option>
+        <option value="direccion_trabajos_grado_maestria_investigacion">Dirección de trabajos de grado de maestría de investigación</option>
+        <option value="direccion_trabajos_grado_maestria_profundizacion">Dirección de trabajos de grado de maestría de profundización</option>
+        <option value="tutor_investigacion">Tutor de investigación</option>
+        <option value="direccion_trabajo_grado_pregrado">Dirección de trabajo de grado de pregrado</option>
+        <option value="coordinacion_semilleros_investigacion">Coordinación de semilleros de investigación</option>
+        <option value="credito_docencia_directa">Crédito en docencia directa (pregrado o postgrado)</option>
+        <option value="coordinacion_area_academica">Coordinación área académica</option>
+        <option value="apoyo_academico_laboratorio">Apoyo académico a laboratorio o líder de competencia institucional</option>
+        <option value="liderazgo_grupo_investigacion">Liderazgo de grupo de investigación</option>
+        <option value="estudios_doctorales">Estudios doctorales</option>
+    </select>
+</div>
+
+<div class="mb-5">
+    <h5>Ingresar Información del Producto:</h5>
+    <div class="row" id="formularioProducto">
+        <div class="col-md-6 mb-3">
+            <label for="tituloProducto" class="form-label">Título obtenido:</label>
+            <input type="text" class="form-control" id="tituloProducto" placeholder="Ingrese el título obtenido">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="descripcionUrl" class="form-label">Institucion de obtencion</label>
+            <input type="text" class="form-control" id="descripcionUrl"
+                placeholder="Ingrese la descripción y URL de soporte del producto">
+        </div>
+        <div class="w-100"></div>
+        <div class="col-md-2 mb-3"> <label for="anioSemestre" class="form-label">Año-Semestre:</label> <select
+                class="form-select" id="anioSemestre">
+                <option value="2024-2">2024-2</option>
+            </select>
+        </div>
+
+        <div class="col-md-4 mb-3"> <label for="evidencias" class="form-label">Evidencias:</label>
+            <input type="file" class="form-control" id="evidencias" placeholder="Adjunte las evidencias">
+        </div>
+        <div class="col-md-3 mb-3" id="campoRegistro" style="display: none;">
+            <label for="#registro" class="form-label"># Registro:</label>
+            <input type="text" class="form-control" id="#registro" maxlength="10"
+                placeholder="Ingrese el # de registro del producto">
+        </div>
+        <div class="col-md-3 mb-3" id="campoIdNorma" style="display: none;">
+            <label for="#idNorma" class="form-label">Id. Norma:</label>
+            <input type="text" class="form-control" id="#idNorma" maxlength="5"
+                placeholder="Ingrese el Id. de la norma">
+        </div>
+
+
+        <div class="col-12 text-end">
+            <button type="button" class="btn" style="background-color: #2c4b52; color: white;">Adicionar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Table for Added Products -->
+<div style="width: 100%; overflow-x: scroll;">
+    <table class="table table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th>Categoría</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Duracion</th>
+                <th>Evidencias</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Spin off</td>
+                <td>Innovación en Energía</td>
+                <td>Proyecto para desarrollar energías renovables.</td>
+                <td>3</td>
+                <td>2022-1</td>
+                <td><i class="bi bi-download" role="button"></i> Documento.pdf</td>
+
+                <td></td>
+                <td class="text-center">
+                    <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
+                    <i class="bi bi-trash text-danger" role="button"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
