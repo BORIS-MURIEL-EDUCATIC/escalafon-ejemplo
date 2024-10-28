@@ -19,7 +19,7 @@
 </div>
 
 <!-- Display Selected Category Information -->
-<div class="categoriaInfo mb-4 p-3 alert alert-primary" role="alert" >
+<div class="categoriaInfo mb-4 p-3 alert alert-primary" role="alert">
   <i class="fas fa-lightbulb"></i>
   <strong>Fuente de Verificación:</strong>
   <p class="descripcionCategoria mb-0 mt-1"></p>
@@ -77,24 +77,22 @@
 
 
     <div class="col-12 text-end">
-      <button type="button" class="btn" style="background-color: #2c4b52; color: white;">Adicionar</button>
+      <button type="button" class="btn edu-btn-primary">Adicionar</button>
     </div>
   </div>
 </div>
 
 <!-- Table for Added Products -->
-<div style="width: 100%; overflow-x: scroll;">
-  <table class="table table-bordered">
-    <thead class="table-light">
+<div class="table-container">
+  <table class="table">
+    <thead>
       <tr>
-        <th>Categoría</th>
-        <th>Título producto</th>
+        <th>Tipo de Producto</th>
+        <th>Título</th>
         <th>Descripción</th>
-
         <th># autores</th>
         <th>Año-Semestre</th>
         <th>Evidencias</th>
-
         <th># Registro / Norma</th>
         <th>Acciones</th>
       </tr>
@@ -106,28 +104,38 @@
         <td>Proyecto para desarrollar energías renovables.</td>
         <td>3</td>
         <td>2022-1</td>
-        <td><i class="bi bi-download" role="button"></i> Documento.pdf</td>
-
+        <td>
+          <div class="d-flex flex-row pointer">
+            <i class="fas fa-download p-2"></i> 
+            <span class="py-2">Documento.pdf</span>
+          </div>
+        </td>
         <td></td>
-        <td class="text-center">
-          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
-          <i class="bi bi-trash text-danger" role="button"></i>
+        <td>
+          <div class="d-flex flex-row justify-content-around">
+            <i class="bi bi-pencil-square text-primary p-2 pointer"></i>
+            <i class="bi bi-trash text-danger p-2 pointer"></i>
+          </div>
         </td>
       </tr>
       <tr>
         <td>Productos empresariales</td>
         <td>Gestor Empresarial</td>
-
         <td>Software de gestión para PYMEs.</td>
         <td>5</td>
         <td>2021-2</td>
-
-        <td><i class="bi bi-download" role="button"></i>Gestor.zip</td>
-
+        <td>
+          <div class="d-flex flex-row pointer">
+            <i class="fas fa-download p-2"></i> 
+            <span class="py-2">Gestor.zip</span>
+          </div>
+        </td>
         <td></td>
-        <td class="text-center">
-          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
-          <i class="bi bi-trash text-danger" role="button"></i>
+        <td>
+          <div class="d-flex flex-row justify-content-around">
+            <i class="bi bi-pencil-square text-primary p-2 pointer"></i>
+            <i class="bi bi-trash text-danger p-2 pointer"></i>
+          </div>
         </td>
       </tr>
       <tr>
@@ -136,13 +144,18 @@
         <td>Aplicación para mejorar la educación en línea.</td>
         <td>4</td>
         <td>2023-1</td>
-
-        <td><i class="bi bi-download" role="button"></i>Plataforma.apk</td>
-
+        <td>
+          <div class="d-flex flex-row pointer">
+            <i class="fas fa-download p-2"></i> 
+            <span class="py-2">Plataforma.apk</span>
+          </div>
+        </td>
         <td></td>
-        <td class="text-center">
-          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
-          <i class="bi bi-trash text-danger" role="button"></i>
+        <td>
+          <div class="d-flex flex-row justify-content-around">
+            <i class="bi bi-pencil-square text-primary p-2 pointer"></i>
+            <i class="bi bi-trash text-danger p-2 pointer"></i>
+          </div>
         </td>
       </tr>
     </tbody>

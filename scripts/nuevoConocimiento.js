@@ -21,20 +21,6 @@ function setupCategoriaChangeHandler() {
   });
 }
 
-function setOtherFields(selectedFieldIds) {
-  const allFieldIds = [
-    "div-radicado",
-    "div-certificado",
-    "div-articulo",
-    "div-contratoPat",
-    "div-contrato",
-    "div-tipo-libro"
-  ];
-
-  allFieldIds.forEach(fieldId => $('#' + fieldId).hide());
-  selectedFieldIds.forEach(fieldId => $('#' + fieldId).show());
-}
-
 function setValues(value) {
   const categoriaInfo = {
     "patente": {
@@ -81,6 +67,20 @@ function setValues(value) {
 
   if (categoriaInfo[value]) {
     hidecategoryInfo(categoriaInfo[value].description);
-    setOtherFieldsDiv(categoriaInfo[value].fieldIds);
+    setOtherFields(categoriaInfo[value].fieldIds);
   }
+}
+
+function setOtherFields(selectedFieldIds) {
+  const allFieldIds = [
+    "div-radicado",
+    "div-certificado",
+    "div-articulo",
+    "div-contratoPat",
+    "div-contrato",
+    "div-tipo-libro"
+  ];
+
+  allFieldIds.forEach(fieldId => $('#' + fieldId).hide());
+  selectedFieldIds.forEach(fieldId => $('#' + fieldId).show());
 }

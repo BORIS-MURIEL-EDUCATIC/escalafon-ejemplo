@@ -116,15 +116,15 @@
 
   <div class="row">
     <div class="col-12 text-end">
-      <button type="button" class="btn" style="background-color: #2c4b52; color: white;">Adicionar</button>
+      <button type="button" class="btn edu-btn-primary">Adicionar</button>
     </div>
   </div>
 </div>
 
 <!-- Table for Added Products -->
-<div style="width: 100%; overflow-x: scroll;">
-  <table class="table table-bordered">
-    <thead class="table-light">
+<div class="table-container">
+  <table class="table">
+    <thead>
       <tr>
         <th>Tipo de Producto</th>
         <th>Título</th>
@@ -143,10 +143,11 @@
         <td>ISBN 978-958-8683-19-5</td>
         <td>4</td>
         <td>2002-2</td>
-
-        <td class="d-flex flex-row">
-          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
-          <i class="bi bi-trash text-danger" role="button"></i>
+        <td>
+          <div class="d-flex flex-row justify-content-around">
+            <i class="bi bi-pencil-square text-primary p-2 pointer"></i>
+            <i class="bi bi-trash text-danger p-2 pointer"></i>
+          </div>
         </td>
       </tr>
       <tr>
@@ -156,10 +157,11 @@
         <td></td>
         <td>1</td>
         <td>2011-1</td>
-
-        <td class="d-flex flex-row">
-          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
-          <i class="bi bi-trash text-danger" role="button"></i>
+        <td>
+          <div class="d-flex flex-row justify-content-around">
+            <i class="bi bi-pencil-square text-primary p-2 pointer"></i>
+            <i class="bi bi-trash text-danger p-2 pointer"></i>
+          </div>
         </td>
       </tr>
     </tbody>

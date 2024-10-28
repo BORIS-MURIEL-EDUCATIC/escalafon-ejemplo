@@ -31,11 +31,11 @@
 </div>
 
 <!-- Table for Added Products -->
-<div style="width: 100%; overflow-x: scroll;">
-  <table class="table table-bordered">
-    <thead class="table-light">
+<div class="table-container">
+  <table class="table">
+    <thead>
       <tr>
-        <th>Categoría</th>
+        <th>Tipo de Producto</th>
         <th>Título</th>
         <th>Descripción</th>
         <th>Duracion</th>
@@ -50,12 +50,13 @@
         <td>Proyecto para desarrollar energías renovables.</td>
         <td>3</td>
         <td>2022-1</td>
-        <td><i class="bi bi-download" role="button"></i> Documento.pdf</td>
-
+        <td><i class="bi bi-download"></i> Documento.pdf</td>
         <td></td>
-        <td class="text-center">
-          <i class="bi bi-pencil-square text-primary me-3" role="button"></i>
-          <i class="bi bi-trash text-danger" role="button"></i>
+        <td>
+          <div class="d-flex flex-row justify-content-around">
+            <i class="bi bi-pencil-square text-primary p-2 pointer"></i>
+            <i class="bi bi-trash text-danger p-2 pointer"></i>
+          </div>
         </td>
       </tr>
     </tbody>
