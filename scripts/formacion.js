@@ -30,8 +30,7 @@ function setupCategoriaFormacionChangeHandler() {
   };
 
   const defaultValue = $('#categoria-form').val();
-  console.log(categoriaInfo[defaultValue]);
-  
+    
   if (typeof categoriaInfo[defaultValue] !== 'undefined') hidecategoryInfo(categoriaInfo[defaultValue]);
 
   $('#categoria-form').change(function () {

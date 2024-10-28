@@ -1,3 +1,4 @@
+/* native styles */
 html,
 body {
   height: 100%;
@@ -48,6 +49,9 @@ i {
   font-size: 20px;
 }
 
+/* native styles */
+
+/* general styles */
 .pointer {
   cursor: pointer;
 }
@@ -62,6 +66,72 @@ i {
   overflow-x: auto;
   border-radius: 10px;
 }
+
+.nav-link.active {
+  background-color: #0B7A83 !important;
+  color: white !important;
+}
+
+.nav-link {
+  border-color: #0B7A83 !important;
+  color: #0B7A83 !important;
+}
+
+/* general styles */
+
+/* navbar styles */
+.edu-image {
+  filter: brightness(0) saturate(100%) invert(1);
+}
+
+.edu-nav-bar .nav-bar img {
+  height: 2rem;
+  padding: 0 .625rem;
+}
+
+.edu-nav-bar .nav-bar {
+  display: flex;
+  max-height: 3.5rem;
+  justify-content: space-between;
+  padding: .75rem 1.25rem;
+}
+
+.nav-bar i,
+.nav-bar span,
+.nav-bar p {
+  color: white;
+}
+
+.input-icon {
+  position: relative;
+  margin: 0 .5rem !important;
+}
+
+.input-icon input {
+  font-family: "Inter", serif !important;
+  color: #6c757d;
+  padding-left: 35px;
+}
+
+.input-icon i {
+  font-size: 16px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.edu-nav-bar {
+  background-color: #0B7A83;
+}
+
+@media (max-width: 920px) {
+  .input-icon {
+    display: none;
+  }
+}
+/* navbar styles */
 
 .page-title {
   margin-bottom: .25rem;
@@ -142,62 +212,18 @@ h5.subtitulo {
   justify-content: center;
 }
 
-.nav-link.active {
-  background-color: #0B7A83 !important;
-  color: white !important;
-}
-
-.nav-link {
-  border-color: #0B7A83 !important;
-  color: #0B7A83 !important;
-}
-
-.edu-nav-bar {
-  background-color: color-mix(in srgb, #0B7A83, transparent 60%);
-}
-
 .btn-icon {
   padding: 0 .625rem;
   font-size: 1.25rem;
 }
 
-.edu-nav-bar .nav-bar img {
-  height: 2rem;
-  padding: 0 .625rem;
-}
 
-.edu-nav-bar .nav-bar {
-  display: flex;
-  max-height: 3.5rem;
-  justify-content: space-between;
-  padding: .75rem 1.25rem;
-}
-
-.input-icon {
-  position: relative;
-  margin: 0 .5rem !important;
-}
-
-.input-icon input {
-  font-family: "Inter", serif !important;
-  color: #6c757d;
-  padding-left: 35px;
-}
-
-.input-icon i {
-  font-size: 16px;
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #6c757d;
-}
-
+/* footer styles */
 .edu-footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: color-mix(in srgb, #0B7A83, transparent 60%);
+  background-color: #0B7A83;
   padding: 1rem 2rem;
   margin-top: auto;
 }
@@ -205,3 +231,4 @@ h5.subtitulo {
 .edu-footer img {
   height: 2rem;
 }
+/* footer styles */
