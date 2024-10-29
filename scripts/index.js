@@ -22,3 +22,8 @@ function hidecategoryInfo(categoryInfo) {
     $('.categoriaInfo').show();
   }
 }
+
+function setOtherFields(allFieldIds, selectedFieldIds) {
+  allFieldIds.forEach(fieldId => $('#' + fieldId).hide());
+  selectedFieldIds.forEach(fieldId => $('#' + fieldId).show());
+}

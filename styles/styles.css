@@ -30,13 +30,17 @@ table {
 }
 
 thead tr th {
-  background-color: color-mix(in srgb, #0B7A83, white 80%) !important;
+  background-color: #0B7A83 !important;
   position: relative;
-  color: #0B7A83 !important;
+  color: #f9f9f9 !important;
   padding: .5rem 1rem !important;
   box-sizing: border-box;
   text-align: center;
   vertical-align: middle;
+}
+
+tbody, td, tfoot, th, thead, tr {
+  border-style: none;
 }
 
 th,
@@ -65,6 +69,7 @@ i {
   width: 100%;
   overflow-x: auto;
   border-radius: 10px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .nav-link.active {
@@ -131,6 +136,7 @@ i {
     display: none;
   }
 }
+
 /* navbar styles */
 
 .page-title {
@@ -217,7 +223,6 @@ h5.subtitulo {
   font-size: 1.25rem;
 }
 
-
 /* footer styles */
 .edu-footer {
   display: flex;
@@ -226,9 +231,93 @@ h5.subtitulo {
   background-color: #0B7A83;
   padding: 1rem 2rem;
   margin-top: auto;
-}
 
-.edu-footer img {
-  height: 2rem;
+  img {
+    height: 2rem;
+  }
 }
 /* footer styles */
+
+/* Escalafon styles */
+.accordion-button {
+  color: #0B7A83 !important;
+  padding: 0.5rem 1.25rem !important;
+}
+
+.accordion-item {
+  margin: 0.5rem 0rem !important;
+}
+
+.accordion-button.collapsed {
+  background-color: #ececec;
+}
+
+.accordion-button:focus {
+  border-color: #0B7A83 !important;
+  box-shadow: 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.accordion-button:not(.collapsed) {
+  color: #0B7A83 !important;
+  background-color: color-mix(in srgb, #0B7A83, white 80%) !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  fill: #0B7A83;
+}
+
+.edu-statistic {
+  width: 184px;
+  display: block;
+  position: relative;
+  background: white;
+  padding: 3.5rem;
+  border-radius: .375rem;
+  box-shadow: 0 .063rem .25rem .063rem #00000026;
+
+  img {
+    pointer-events: none;
+    position: absolute;
+    bottom: -.063rem;
+    left: 0;
+    width: 100%;
+  }
+
+  .info {
+    position: absolute;
+    top: 1rem;
+    left: 0.625rem;
+    color: #0B7A83;
+
+    .name,
+    .value {
+      width: 11rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .value {
+      font-size: 1.5rem;
+      margin-top: -0.5rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.pagination-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.active>.page-link, .page-link.active {
+  color: #f9f9f9 !important;
+  background-color: #0B7A83 !important;
+  border-color: #0B7A83 !important;
+}
+
+.page-link {
+  color: #0B7A83 !important;
+}
+/* Escalafon styles */

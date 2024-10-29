@@ -19,15 +19,92 @@
     <option value="coordinacion_area_academica">Coordinación área académica</option>
     <option value="apoyo_academico_laboratorio">Apoyo académico a laboratorio o líder de competencia institucional
     </option>
-    <option value="liderazgo_grupo_investigacion">Liderazgo de grupo de investigación</option>
+    <option value="direccion_grupo_investigacion">Dirección grupo de investigación</option>
     <option value="estudios_doctorales">Estudios doctorales</option>
   </select>
 </div>
 
-<div class="categoriaInfo mb-4 p-3 alert alert-primary" role="alert" >
+<div class="categoriaInfo mb-4 p-3 alert alert-primary" role="alert">
   <i class="fas fa-lightbulb"></i>
   <strong>Fuente de Verificación:</strong>
   <p class="descripcionCategoria mb-0 mt-1"></p>
+</div>
+
+<!-- Form to Add Product Information -->
+<div class="mb-5">
+  <h5>Ingresar Información del Producto:</h5>
+  <div class="row">
+
+    <div class="col-md-6 mb-3">
+      <div class="d-flex flex-column justify-content-center h-100">
+        <label for="tituloProducto" class="form-label" id="tituloLabel">Título del producto:</label>
+        <input type="text" class="form-control" id="tituloProducto" placeholder="Ingrese el título del producto.">
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3" id="div-articulo">
+      <div class="d-flex flex-column justify-content-center h-100">
+        <label for="issnIsbn" class="form-label">ISSN/ISBN:</label>
+        <input type="text" class="form-control" id="issnIsbn" placeholder="Ingrese el ISSN o ISBN correspondiente">
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3" id="div-creditos">
+      <div class="d-flex flex-column justify-content-center h-100">
+        <label for="creditos" class="form-label">Número de créditos:</label>
+        <input type="number" class="form-control" id="creditos" min="1" max="20"
+          placeholder="Ingrese número de créditos">
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3" id="div-autores">
+      <div class="d-flex flex-column justify-content-center h-100">
+        <label for="autores" class="form-label">Número de autores:</label>
+        <input type="number" class="form-control" id="autores" min="1" max="99" placeholder="Número de autores"
+          oninput="if (this.value > 99) this.value = 99;">
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3" id="div-grupos">
+      <div class="d-flex flex-column justify-content-center h-100">
+        <label for="grupos" class="form-label">Número de grupos en el semestre:</label>
+        <input type="number" class="form-control" id="grupos" min="1" max="99"
+          placeholder="Número de grupos en el semestre" oninput="if (this.value > 99) this.value = 99;">
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <label for="anioSemestre" class="form-label" id="anioSemestreLabel">Año-Semestre:</label>
+      <select class="form-select" id="anioSemestre">
+        <option value="2024-2">2024-2</option>
+        <option value="2024-1">2024-1</option>
+        <option value="2023-2">2023-2</option>
+        <option value="2023-1">2023-1</option>
+        <option value="2022-2">2022-2</option>
+        <option value="2022-1">2022-1</option>
+        <option value="2021-2">2021-2</option>
+        <option value="2021-1">2021-1</option>
+        <option value="2020-2">2020-2</option>
+        <option value="2020-1">2020-1</option>
+      </select>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="evidencias" class="form-label" id="evidenciasLabel">Evidencias:</label>
+      <input type="file" class="form-control" id="evidencias" placeholder="Adjunte las evidencias">
+    </div>
+
+    <div class="col-md-12 mb-3">
+      <label for="descripcionUrl" class="form-label" id="descripcionUrlLabel">Descripción:</label>
+      <textarea class="form-control" id="descripcionUrl" rows="3"
+        placeholder="Ingrese la descripción del producto"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-end">
+      <button type="button" class="btn edu-btn-primary">Adicionar</button>
+    </div>
+  </div>
 </div>
 
 <!-- Table for Added Products -->
@@ -35,22 +112,70 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Tipo de Producto</th>
+        <th>Categoría</th>
         <th>Título</th>
         <th>Descripción</th>
-        <th>Duracion</th>
-        <th>Evidencias</th>
+        <th>#</th>
+        <th>Año y Semestre</th>
+        <th>Evidencia</th>
+        <th>Créditos o ISSN/ISBN</th>
         <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Spin off</td>
-        <td>Innovación en Energía</td>
-        <td>Proyecto para desarrollar energías renovables.</td>
-        <td>3</td>
-        <td>2022-1</td>
-        <td><i class="bi bi-download"></i> Documento.pdf</td>
+        <td>Administración académica</td>
+        <td>Coordinación de Área Académica</td>
+        <td>Coordinación del área académica durante el semestre con buena evaluación.</td>
+        <td>2</td>
+        <td>2024-1</td>
+        <td>
+          <div class="d-flex flex-row pointer">
+            <i class="fas fa-download p-2"></i>
+            <span class="py-2">Informe.pdf</span>
+          </div>
+        </td>
+        <td> </td>
+        <td>
+          <div class="d-flex flex-row justify-content-around">
+            <i class="bi bi-pencil-square text-primary p-2 pointer"></i>
+            <i class="bi bi-trash text-danger p-2 pointer"></i>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Encargo administrativo empresarial</td>
+        <td>Gerencia de Proyecto</td>
+        <td>Gestión de un proyecto empresarial de liderazgo con personal a cargo.</td>
+        <td>4</td>
+        <td>2023-2</td>
+        <td>
+          <div class="d-flex flex-row pointer">
+            <i class="fas fa-download p-2"></i>
+            <span class="py-2">Gerencia.zip</span>
+          </div>
+        </td>
+        <td></td>
+        <td>
+          <div class="d-flex flex-row justify-content-around">
+            <i class="bi bi-pencil-square text-primary p-2 pointer"></i>
+            <i class="bi bi-trash text-danger p-2 pointer"></i>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Dirección de tesis de doctorado</td>
+        <td>Tesis en Inteligencia Artificial</td>
+        <td>Dirección de tesis doctoral sobre el desarrollo de sistemas de inteligencia artificial aplicados a la
+          educación.</td>
+        <td>1</td>
+        <td>2022-2</td>
+        <td>
+          <div class="d-flex flex-row pointer">
+            <i class="fas fa-download p-2"></i>
+            <span class="py-2">Tesis.pdf</span>
+          </div>
+        </td>
         <td></td>
         <td>
           <div class="d-flex flex-row justify-content-around">
